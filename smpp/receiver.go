@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
 )
 
 // Receiver implements an SMPP client receiver.

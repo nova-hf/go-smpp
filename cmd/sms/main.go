@@ -19,9 +19,9 @@ import (
 
 	"github.com/urfave/cli"
 
-	"github.com/nova-hf/go-smpp/smpp"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutext"
+	"github.com/nova-hf/go-smpp/v2/smpp"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutext"
 )
 
 // Version of smppcli.

@@ -12,10 +12,10 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/nova-hf/go-smpp/smpp"
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutext"
+	"github.com/nova-hf/go-smpp/v2/smpp"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutext"
 )
 
 func ExampleReceiver() {

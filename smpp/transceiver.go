@@ -10,8 +10,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
 )
 
 // Transceiver implements an SMPP transceiver.

@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/smpptest"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/smpptest"
 )
 
 func TestReceiver(t *testing.T) {

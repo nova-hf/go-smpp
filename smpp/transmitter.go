@@ -15,10 +15,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutext"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutlv"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutext"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutlv"
 )
 
 // ErrMaxWindowSize is returned when an operation (such as Submit) violates

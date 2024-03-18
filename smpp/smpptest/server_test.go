@@ -9,10 +9,10 @@ import (
 	"net"
 	"testing"
 
-	"github.com/nova-hf/go-smpp/smpp/pdu"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdufield"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutext"
-	"github.com/nova-hf/go-smpp/smpp/pdu/pdutlv"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdufield"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutext"
+	"github.com/nova-hf/go-smpp/v2/smpp/pdu/pdutlv"
 )
 
 func TestServer(t *testing.T) {
