@@ -195,6 +195,7 @@ type ShortMessage struct {
 	ReplaceIfPresentFlag uint8
 	SMDefaultMsgID       uint8
 	NumberDests          uint8
+	MessageType          uint8
 
 	resp struct {
 		sync.Mutex
@@ -312,16 +313,17 @@ func (t *Transmitter) do(p pdu.Body) (*tx, error) {
 // Submit sends a short message and returns and updates the given
 // sm with the response status. It returns the same sm object.
 func (t *Transmitter) Submit(sm *ShortMessage) (*ShortMessage, error) {
+	dataCoding := uint8(sm.Text.Type()) | sm.MessageType
 	if len(sm.DstList) > 0 || len(sm.DLs) > 0 {
 		// if we have a single destination address add it to the list
 		if sm.Dst != "" {
 			sm.DstList = append(sm.DstList, sm.Dst)
 		}
 		p := pdu.NewSubmitMulti(sm.TLVFields)
-		return t.submitMsgMulti(sm, p, uint8(sm.Text.Type()))
+		return t.submitMsgMulti(sm, p, dataCoding)
 	}
 	p := pdu.NewSubmitSM(sm.TLVFields)
-	return t.submitMsg(sm, p, uint8(sm.Text.Type()))
+	return t.submitMsg(sm, p, dataCoding)
 }
 
 // SubmitLongMsg sends a long message (more than 140 bytes)
