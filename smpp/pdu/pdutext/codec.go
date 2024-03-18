@@ -22,6 +22,12 @@ const (
 	//	ISO2022JPType DataCoding = 0x0A // ISO-2022-JP (Music Codes)
 	//	EXTJISType    DataCoding = 0x0D // Extended Kanji JIS (X 0212-1990)
 	//	KSC5601Type   DataCoding = 0x0E // KS C 5601
+	// Below types should be bitwise ORed to the encoding types above if their use is desired
+	// The type must be one of the below
+	FlashType DataCoding = 0x10
+	METype DataCoding = 0x11
+	SIMUSIMType DataCoding = 0x12
+	TEType DataCoding = 0x13
 )
 
 // Codec defines a text codec.

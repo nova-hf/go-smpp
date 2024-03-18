@@ -45,3 +45,22 @@ func TestDecode(t *testing.T) {
 		}
 	}
 }
+
+func TestTypes(t *testing.T) {
+	test := []struct {
+		want DataCoding
+		test DataCoding
+	}{
+		{0x00, DefaultType},
+		{0x03, Latin1Type},
+		{0x06, ISO88595Type},
+		{0x08, UCS2Type},
+		{0x10, DefaultType | FlashType},
+		{0x18, UCS2Type | FlashType},
+	}
+	for _, tc := range test {
+		if tc.want != tc.test {
+			t.Fatalf("unexpected data coding:\nwant: %x\nhave: %x", tc.want, tc.test)
+		}
+	}
+}
