@@ -330,6 +330,7 @@ func (t *Transmitter) Submit(sm *ShortMessage) (*ShortMessage, error) {
 // and returns and updates the given sm with the response status.
 // It returns the same sm object.
 func (t *Transmitter) SubmitLongMsg(sm *ShortMessage) ([]ShortMessage, error) {
+	dataCoding := uint8(sm.Text.Type()) | sm.MessageType
 	maxLen := 133 // 140-7 (UDH with 2 byte reference number)
 	switch sm.Text.(type) {
 	case pdutext.GSM7:
@@ -383,7 +384,7 @@ func (t *Transmitter) SubmitLongMsg(sm *ShortMessage) ([]ShortMessage, error) {
 		f.Set(pdufield.ScheduleDeliveryTime, sm.ScheduleDeliveryTime)
 		f.Set(pdufield.ReplaceIfPresentFlag, sm.ReplaceIfPresentFlag)
 		f.Set(pdufield.SMDefaultMsgID, sm.SMDefaultMsgID)
-		f.Set(pdufield.DataCoding, uint8(sm.Text.Type()))
+		f.Set(pdufield.DataCoding, dataCoding)
 		resp, err := t.do(p)
 		if err != nil {
 			return nil, err
